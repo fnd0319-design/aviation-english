@@ -599,31 +599,6 @@ export function PracticeRoom({ testMode, onGoBack }: PracticeRoomProps) {
     );
   };
 
-  // ----------------------------------------------------
-  // AI試験官のイラスト顔切り替え
-  // ----------------------------------------------------
-  const renderExaminerIllustration = () => {
-    let emoji = "👩‍✈️"; 
-    let label = "Standard";
-    let bg = "#2c3e50";
-
-    if (level === 'Level 3') {
-      emoji = "😊👩‍🏫";
-      label = "Friendly / Gentle";
-      bg = "#27ae60";
-    } else if (level === 'Level 5') {
-      emoji = "🤨🧐";
-      label = "Strict / Native";
-      bg = "#c0392b";
-    }
-
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', padding: '15px', backgroundColor: bg, borderRadius: '8px', width: '120px', transition: 'all 0.3s' }}>
-        <span style={{ fontSize: '3rem' }}>{emoji}</span>
-        <span style={{ fontSize: '0.8rem', color: '#fff', fontWeight: 'bold' }}>{label}</span>
-      </div>
-    );
-  };
 
   // ----------------------------------------------------
   // サブメニュー画面 (復習モード等の分岐)
@@ -1125,44 +1100,36 @@ export function PracticeRoom({ testMode, onGoBack }: PracticeRoomProps) {
           </button>
         </div>
 
-        <h2 className="practice-room-title">試験のセットアップ</h2>
+        <h2 className="practice-room-title">レベル選択</h2>
 
-        <div style={{ display: 'flex', gap: '40px', justifyContent: 'center', margin: '40px 0', alignItems: 'center' }}>
-          <div>
-            <h3 style={{ marginBottom: '15px' }}>1. 難易度レベルの選択</h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-              {['Level 3', 'Level 4', 'Level 5'].map(lvl => (
-                <button 
-                  key={lvl}
-                  onClick={() => setLevel(lvl)}
-                  style={{
-                    padding: '15px 30px',
-                    fontSize: '1.2rem',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    border: '2px solid',
-                    fontWeight: 'bold',
-                    borderColor: level === lvl ? 'var(--highlight-color)' : '#444',
-                    backgroundColor: level === lvl ? 'rgba(230, 126, 34, 0.2)' : '#1e293b',
-                    color: '#fff',
-                    textAlign: 'left',
-                    transition: 'all 0.2s'
-                  }}
-                >
-                  <div>{lvl === 'Level 3' ? 'Level 3（入門）' : lvl === 'Level 4' ? 'Level 4（実務レベル）' : 'Level 5（ネイティブレベル）'}</div>
-                  <span style={{ fontSize: '0.85rem', color: '#aaa', fontWeight: 'normal' }}>
-                    {lvl === 'Level 3' && "とてもゆっくり / 小学生並みの簡単な英語"}
-                    {lvl === 'Level 4' && "少しゆっくりめ / 実務基準のフィードバック"}
-                    {lvl === 'Level 5' && "通常ネイティブスピード / 厳しめの詳細アドバイス"}
-                  </span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 style={{ marginBottom: '15px' }}>2. AI試験官の属性</h3>
-            {renderExaminerIllustration()}
+        <div style={{ display: 'flex', justifyContent: 'center', margin: '30px 0' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', width: '100%', maxWidth: '420px' }}>
+            {['Level 3', 'Level 4', 'Level 5'].map(lvl => (
+              <button 
+                key={lvl}
+                onClick={() => setLevel(lvl)}
+                style={{
+                  padding: '16px 25px',
+                  fontSize: '1.2rem',
+                  borderRadius: '10px',
+                  cursor: 'pointer',
+                  border: '2px solid',
+                  fontWeight: 'bold',
+                  borderColor: level === lvl ? 'var(--highlight-color)' : '#334155',
+                  backgroundColor: level === lvl ? 'rgba(230, 126, 34, 0.2)' : '#1e293b',
+                  color: '#fff',
+                  textAlign: 'left',
+                  transition: 'all 0.2s'
+                }}
+              >
+                <div>{lvl === 'Level 3' ? 'Level 3（入門）' : lvl === 'Level 4' ? 'Level 4（実務レベル）' : 'Level 5（ネイティブレベル）'}</div>
+                <span style={{ fontSize: '0.85rem', color: '#aaa', fontWeight: 'normal' }}>
+                  {lvl === 'Level 3' && "とてもゆっくり / 小学生並みの簡単な英語"}
+                  {lvl === 'Level 4' && "少しゆっくりめ / 実務基準のフィードバック"}
+                  {lvl === 'Level 5' && "通常ネイティブスピード / 厳しめの詳細アドバイス"}
+                </span>
+              </button>
+            ))}
           </div>
         </div>
 
