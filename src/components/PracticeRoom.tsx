@@ -657,7 +657,7 @@ export function PracticeRoom({ testMode, onGoBack }: PracticeRoomProps) {
         )}
 
         <h2 className="practice-room-title">
-          {isReviewMode ? "【復習版】復習したいTESTを選択してください" : "テストする項目を選択してください"}
+          {isReviewMode ? "【復習版】復習したい画像を選択してください" : "画像を選択してください"}
         </h2>
 
         {/* 経験の復習用分岐ボタン */}
