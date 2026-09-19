@@ -1,3 +1,5 @@
+import seqTest01 from '../assets/seq_test_01.jpg';
+
 export interface SequencePictureData {
   id: string;
   title: string;
@@ -14,7 +16,7 @@ export const sequencePictures: SequencePictureData[] = [
     id: "seq_01",
     title: "TEST1.Visual Approach中のRWY Change",
     imageUrls: [
-      "/seq_test_01.jpg"
+      seqTest01
     ],
     descriptionPrompt: "Please look at the 4-panel picture and explain the situation you experienced in the past tense.",
     sampleAnswers: [

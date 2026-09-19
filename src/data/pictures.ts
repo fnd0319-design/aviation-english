@@ -1,3 +1,9 @@
+import testPic01 from '../assets/test_picture_01_new.jpg';
+import testPic02 from '../assets/test_picture_02_new.jpg';
+import testPic03 from '../assets/test_picture_03_new.jpg';
+import testPic04 from '../assets/test_picture_04.jpg';
+import testPic05 from '../assets/test_picture_05.jpg';
+
 export interface PictureData {
   id: string;
   imageUrl: string;
@@ -10,7 +16,7 @@ export interface PictureData {
 export const pictures: PictureData[] = [
   {
     id: "pic_01",
-    imageUrl: "/src/assets/test_picture_01_new.jpg",
+    imageUrl: testPic01,
     descriptionPrompt: "Please describe the situation in the picture.",
     sampleAnswers: [
       "passenger boarding the airplane",
@@ -37,7 +43,7 @@ export const pictures: PictureData[] = [
   },
   {
     id: "pic_02",
-    imageUrl: "/src/assets/test_picture_02_new.jpg",
+    imageUrl: testPic02,
     descriptionPrompt: "Please describe the situation in the picture.",
     sampleAnswers: [
       "I can see an airplane parked, and there is a maintenance issue.",
@@ -60,7 +66,7 @@ export const pictures: PictureData[] = [
   },
   {
     id: "pic_03",
-    imageUrl: "/src/assets/test_picture_03_new.jpg",
+    imageUrl: testPic03,
     descriptionPrompt: "Please describe the situation in the picture.",
     sampleAnswers: [
       "An aircraft is on fire on the runway, and black smoke is billowing from it.",
@@ -83,7 +89,7 @@ export const pictures: PictureData[] = [
   },
   {
     id: "pic_04",
-    imageUrl: "/src/assets/test_picture_04.jpg",
+    imageUrl: testPic04,
     descriptionPrompt: "Please describe the situation in the picture.",
     sampleAnswers: [
       "This is a cross-section diagram of a Boeing 767-300.",
@@ -106,7 +112,7 @@ export const pictures: PictureData[] = [
   },
   {
     id: "pic_05",
-    imageUrl: "/test_05.jpg",
+    imageUrl: testPic05,
     descriptionPrompt: "Please describe the situation in the picture.",
     sampleAnswers: [
       "An airplane is on fire on the runway and emitting heavy black smoke.",
